@@ -8,8 +8,8 @@ table{
     border-collapse: collapse;
 }
 td{
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     text-align: center;
 }
 .square{
@@ -20,6 +20,53 @@ td{
     background-color: white;
     text-align: center;
     box-sizing: border-box; 
-    padding: 0; 
-    font-size: small;
+    padding: 0;
+}
+.numberButton{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-width: 1px;
+    border-radius: 5px;
+}
+@media (hover: hover) {
+    .numberButton:hover{
+        background-color: lightgrey;
+    }
+}
+.numberButton:active{
+    background-color: grey;
+}
+#solve,
+#allDelete{
+    width: 60px;
+    height: 30px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#solve{
+    background-color: slateblue;
+}
+@media (hover: hover) {
+    #solve:hover{
+        background-color: skyblue;
+    }
+}
+#solve:active{
+    background-color: lightblue;
+}
+#allDelete{
+    background-color: red;
+}
+@media (hover: hover) {
+    #allDelete:hover{
+        background-color: Coral;
+    }
+}
+#allDelete:active{
+    background-color: Salmon;
 }

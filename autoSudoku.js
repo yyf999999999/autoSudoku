@@ -45,6 +45,14 @@ const inputNum = (num) =>{
     content.innerText = num;
 }
 
+const allDelete = () =>{
+    for (let i = 0; i < 9; i++){
+        for (let j = 0; j < 9; j++){
+            table.rows[i].cells[j].querySelector("button").innerText = null;
+        }
+    }
+}
+
 const beforeSolve = () =>{
     let nowTable = new Array(9);
     let answers = new Array(9);
@@ -113,8 +121,6 @@ const solve = (nowTable, answers) =>{
                 }
             }
         }
-        console.log(answers);
-        console.log(answersTable, n);
         for (let i = 0; i < 9; i++){
             for (let j = 0; j < 9; j++){
                 if (answersTable[i][j] && !nowTable[i][j]){
@@ -125,11 +131,6 @@ const solve = (nowTable, answers) =>{
                     let ul = [];
                     for (let k = up; k < up + 3; k++){
                         ul.push(...answersTable[k].slice(left, left+3));
-                    }
-                    if (beforeCell[0] === i && beforeCell[1] === j){
-                        console.log(row, j, row.filter(TF => TF).length);
-                        console.log(column, i, column.filter(TF => TF));
-                        console.log(ul,(i - up) * 3 + j - left, ul.filter(TF => TF));
                     }
                     if (row.filter(TF => TF).length === 1 && row[j] ||
                         column.filter(TF => TF).length === 1 && column[i] ||
